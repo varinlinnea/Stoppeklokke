@@ -41,6 +41,7 @@ function pauseTimer() { // function that pauses the timer and displays the laps 
     deciseconds = 0;
     seconds = 0;
     dekaseconds = 0;
+    minutes = 0;
     timeDisplay.innerHTML = seconds;
 }
 function stopTimer() { // function that resets the timer
@@ -50,5 +51,6 @@ function stopTimer() { // function that resets the timer
     deciseconds = 0;
     seconds = 0;
     dekaseconds = 0;
+    minutes = 0;
     timeDisplay.innerHTML = '0:00:00';
 }

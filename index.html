@@ -4,40 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stopwatch</title>
-
-    <style>
-
-        body {
-            background-color: rgb(77, 77, 77);
-        }
-
-        .header {
-            color: white;
-            display: flex;
-            justify-content: center;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        .container {
-            color: white;
-            justify-content: center;
-            align-content: center;
-            display: flex;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-        
-        .laps {
-            margin-right: 200px;
-        }
-        .buttons {
-            text-align: center;
-        }
-        
-        .timerContainer {
-            text-align: center;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/style.css" ></link>
 
 </head>
 <body>
@@ -49,7 +16,7 @@
         </div>
 
         <div class="timerContainer">
-             <h1 id="timeDisplay">0</h1> <!-- display for the timer -->
+             <div id="timeDisplay" class="timeDisplay">0:00:00</div> <!-- display for the timer -->
 
             <div id="buttons"> <!-- buttons for the timer -->
                 <button onclick="startTimer()">Start</button>
@@ -59,38 +26,6 @@
         </div>
        
     </div>
-   
-    <script>
-
-        let timer;
-        let seconds = 0;
-        let lapRounds = 1;
-        let timeDisplay = document.getElementById("timeDisplay")
-        let lapDisplay = document.getElementById("lapDisplay")
-
-        function startTimer() { // function that starts the timer
-            timer = setInterval(countSeconds, 1000);
-        }
-
-        function countSeconds() { // function that gets passed to the start button, increasing the seconds by 1 every second
-            timeDisplay.innerHTML = seconds;
-            seconds++;
-        }
-
-        function pauseTimer() { // function that pauses the timer and displays the laps on the webpage
-            clearInterval(timer);
-            lapDisplay.innerHTML += `<div>Lap ${lapRounds}: ${seconds} seconds</div>`;
-            lapRounds++;
-            seconds = 0;
-            timeDisplay.innerHTML = seconds;
-        }
-        function stopTimer() { // function that resets the timer
-            clearInterval(timer);
-            lapDisplay.innerHTML = ``;
-            seconds = 0;
-            timeDisplay.innerHTML = seconds;
-        }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

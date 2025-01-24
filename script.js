@@ -1,5 +1,3 @@
-
-
 let timer;
 let centiseconds = 0;
 let deciseconds = 0;
@@ -14,7 +12,7 @@ function startTimer() { // function that starts the timer
     timer = setInterval(countTime, 10);
 }
 
-function countTime() { // gets passed to setInterval
+function countTime() { // gets passed to setInterval in startTimer function
     timeDisplay.innerHTML = `<div>${minutes}:${dekaseconds}${seconds}:${deciseconds}${centiseconds}</div>`;
     centiseconds++;
     if (centiseconds === 10) {

@@ -80,6 +80,7 @@
         function pauseTimer() { // function that pauses the timer and displays the laps on the webpage
             clearInterval(timer);
             lapDisplay.innerHTML += `<div>Lap ${lapRounds}: ${seconds} seconds</div>`;
+            lapRounds++;
             seconds = 0;
             timeDisplay.innerHTML = seconds;
         }

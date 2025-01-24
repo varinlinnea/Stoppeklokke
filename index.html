@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+
+    <style>
+    </style>
+
+</head>
+<body>
+
+    <div> <!-- displaying the laps -->
+        <div>Laps:</div>
+        <div id="lapDisplay"></div>
+    </div>
+
+    <div id="timeDisplay"></div> <!-- display for the timer -->
+
+    <div id="buttons"> <!-- buttons for the timer -->
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick = "stopTimer()">Reset</button>
+    </div>
+
+    <script>
+
+        let timer;
+        let seconds = 0;
+        let lapRounds = 1;
+        let timeDisplay = document.getElementById("timeDisplay")
+        let lapDisplay = document.getElementById("lapDisplay")
+
+        function startTimer() { // function that starts the timer
+            timer = setInterval(countSeconds, 1000);
+        }
+
+        function countSeconds() { // function that gets passed to the start button, increasing the seconds by 1 every second
+            timeDisplay.innerHTML = seconds;
+            seconds++;
+        }
+
+        function pauseTimer() { // function that pauses the timer and displays the laps on the webpage
+            clearInterval(timer);
+            lapDisplay.innerHTML += `<div>Lap ${lapRounds}: ${seconds} seconds</div>`;
+            seconds = 0;
+            timeDisplay.innerHTML = seconds;
+        }
+        function stopTimer() { // function that resets the timer
+            clearInterval(timer);
+            lapDisplay.innerHTML = ``;
+            seconds = 0;
+            timeDisplay.innerHTML = seconds;
+        }
+
+    </script>
+</body>
+</html>

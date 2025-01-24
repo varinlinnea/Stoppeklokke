@@ -14,12 +14,7 @@ function startTimer() { // function that starts the timer
     timer = setInterval(countTime, 10);
 }
 
-function countTime() {
-    countSeconds();
-    setInterval(countTime, 10)
-}
-
-function countTime() {
+function countTime() { // gets passed to setInterval
     timeDisplay.innerHTML = `<div>${minutes}:${dekaseconds}${seconds}:${deciseconds}${centiseconds}</div>`;
     centiseconds++;
     if (centiseconds === 10) {

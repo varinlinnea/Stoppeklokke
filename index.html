@@ -6,24 +6,60 @@
     <title>Stopwatch</title>
 
     <style>
+
+        body {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .header {
+            color: white;
+            display: flex;
+            justify-content: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            color: white;
+            justify-content: center;
+            align-content: center;
+            display: flex;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .laps {
+            margin-right: 200px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        
+        .timerContainer {
+            text-align: center;
+        }
+
     </style>
 
 </head>
 <body>
+    <h1 class="header">STOPPEKLOKKE</h1>
+    <div class="container">
+         <div class="laps"> <!-- displaying the laps -->
+            <h2>LAPS:</h2>
+            <div id="lapDisplay"></div>
+        </div>
 
-    <div> <!-- displaying the laps -->
-        <div>Laps:</div>
-        <div id="lapDisplay"></div>
+        <div class="timerContainer">
+             <h1 id="timeDisplay">0</h1> <!-- display for the timer -->
+
+            <div id="buttons"> <!-- buttons for the timer -->
+                <button onclick="startTimer()">Start</button>
+                <button onclick="pauseTimer()">Pause</button>
+                <button onclick = "stopTimer()">Reset</button>
+            </div>
+        </div>
+       
     </div>
-
-    <div id="timeDisplay"></div> <!-- display for the timer -->
-
-    <div id="buttons"> <!-- buttons for the timer -->
-        <button onclick="startTimer()">Start</button>
-        <button onclick="pauseTimer()">Pause</button>
-        <button onclick = "stopTimer()">Reset</button>
-    </div>
-
+   
     <script>
 
         let timer;
